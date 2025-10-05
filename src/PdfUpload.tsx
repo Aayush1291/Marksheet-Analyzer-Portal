@@ -91,15 +91,14 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
   const [sem1Pdf, setSem1Pdf] = useState<File | null>(null);
   const [sem2Pdf, setSem2Pdf] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
-
-  const downloadFile = (url: string, filename: string) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const [showJson, setShowJson] = useState(false);
+  
+  interface PdfResults {
+    data: any[];
+    jsonFile: string;
+    excelFile: string;
+  }
+  const [results, setResults] = useState<PdfResults | null>(null);
 
   const handleSinglePdfSubmit = async () => {
     if (!singlePdf) {
@@ -124,9 +123,11 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
 
       const data = await res.json();
       if (data.success) {
-        downloadFile(`${BASE_URL}${data.json_file}`, "analysis.json");
-        downloadFile(`${BASE_URL}${data.excel_file}`, "analysis.xlsx");
-        alert("Files downloaded successfully!");
+        setResults({
+          data: data.results,
+          jsonFile: `${BASE_URL}${data.json_file}`,
+          excelFile: `${BASE_URL}${data.excel_file}`,
+        });
       } else {
         alert(data.message || "Something went wrong.");
       }
@@ -165,9 +166,11 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
 
       const data = await res.json();
       if (data.success) {
-        downloadFile(`${BASE_URL}${data.json_file}`, "analysis.json");
-        downloadFile(`${BASE_URL}${data.excel_file}`, "analysis.xlsx");
-        alert("Files downloaded successfully!");
+        setResults({
+          data: data.results,
+          jsonFile: `${BASE_URL}${data.json_file}`,
+          excelFile: `${BASE_URL}${data.excel_file}`,
+        });
       } else {
         alert(data.message || "Something went wrong.");
       }
@@ -311,7 +314,11 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               {loading ? "Analyzing..." : "Submit"}
             </button>
             <button
-              onClick={() => setMode(null)}
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+                setShowJson(false);
+              }}
               style={{
                 background: "transparent",
                 color: "#00ffe7",
@@ -401,7 +408,11 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               {loading ? "Analyzing..." : "Submit"}
             </button>
             <button
-              onClick={() => setMode(null)}
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+                setShowJson(false);
+              }}
               style={{
                 background: "transparent",
                 color: "#00ffe7",
@@ -417,10 +428,85 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
             </button>
           </div>
         )}
+
+        {results && (
+          <div
+            style={{
+              marginTop: "24px",
+              padding: "16px",
+              background: "#232526",
+              borderRadius: "8px",
+            }}
+          >
+            <div style={{ marginTop: "20px", display: "flex", gap: "12px" }}>
+              <button
+                onClick={() => setShowJson(!showJson)}
+                style={{
+                  flex: 1,
+                  textAlign: "center",
+                  background: "#00ffe7",
+                  color: "#232526",
+                  padding: "10px",
+                  borderRadius: "8px",
+                  border: "none",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                {showJson ? "Hide JSON" : "View JSON"}
+              </button>
+              <a
+                href={results.excelFile}
+                download
+                style={{
+                  flex: 1,
+                  textAlign: "center",
+                  background: "#007cf0",
+                  color: "#fff",
+                  padding: "10px",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                Download Excel
+              </a>
+            </div>
+
+            {showJson && (
+              <div
+                style={{
+                  marginTop: "16px",
+                  background: "#1a1a1a",
+                  borderRadius: "8px",
+                  padding: "16px",
+                  maxHeight: "400px",
+                  overflowY: "auto",
+                }}
+              >
+                <pre
+                  style={{
+                    color: "#00ffe7",
+                    fontSize: "12px",
+                    margin: 0,
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                  }}
+                >
+                  {JSON.stringify(results.data, null, 2)}
+                </pre>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 
 const ExcelAnalysisPage = ({
   setPage,
