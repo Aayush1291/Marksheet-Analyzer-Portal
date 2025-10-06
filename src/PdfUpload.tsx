@@ -34,7 +34,7 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
             fontSize: "2rem",
           }}
         >
-          Marksheet Analyzer
+          ScanWise
         </h1>
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <button
