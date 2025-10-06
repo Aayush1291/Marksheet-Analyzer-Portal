@@ -1,6 +1,7 @@
 import { useState } from "react";
+import {API_URL} from "../config"
 
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = API_URL;
 
 const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
   return (
