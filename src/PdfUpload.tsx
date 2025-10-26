@@ -7,80 +7,87 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #232526 0%, #414345 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
+        height: "100vh",
+        width: "100vw",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "Roboto Mono, monospace",
-        color: "#00ffe7",
-        padding: "20px",
+        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        color: "#333",
+        padding: "0",
+        margin: "0",
+        position: "fixed",
+        top: 0,
+        left: 0,
       }}
     >
-      <div
+      <h1
         style={{
-          background: "rgba(35, 37, 38, 0.8)",
-          borderRadius: "16px",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-          padding: "48px",
-          maxWidth: "500px",
-          width: "100%",
+          textAlign: "center",
+          marginBottom: "50px",
+          fontSize: "3rem",
+          color: "#E5322D",
+          fontWeight: "700",
         }}
       >
-        <h1
+        ScanWise
+      </h1>
+      <div style={{ display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center" }}>
+        <button
+          onClick={() => setPage("pdf-analysis")}
           style={{
-            textAlign: "center",
-            marginBottom: "40px",
-            letterSpacing: "2px",
-            fontSize: "2rem",
+            background: "#E5322D",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "6px",
+            padding: "24px 50px",
+            fontWeight: "600",
+            fontSize: "1.2rem",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(229,50,45,0.2)",
+            transition: "all 0.3s ease",
+            minWidth: "250px",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 4px 12px rgba(229,50,45,0.3)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 2px 8px rgba(229,50,45,0.2)";
           }}
         >
-          ScanWise
-        </h1>
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <button
-            onClick={() => setPage("pdf-analysis")}
-            style={{
-              background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-              color: "#232526",
-              border: "none",
-              borderRadius: "8px",
-              padding: "20px",
-              fontWeight: "bold",
-              fontSize: "1.2rem",
-              cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(0,255,231,0.2)",
-              transition: "transform 0.2s",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          >
-            PDF Analysis
-          </button>
-          <button
-            onClick={() => setPage("excel-analysis")}
-            style={{
-              background: "linear-gradient(90deg, #007cf0 0%, #00c9ff 100%)",
-              color: "#232526",
-              border: "none",
-              borderRadius: "8px",
-              padding: "20px",
-              fontWeight: "bold",
-              fontSize: "1.2rem",
-              cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(0,124,240,0.2)",
-              transition: "transform 0.2s",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          >
-            Excel Analysis
-          </button>
-        </div>
+          PDF Analysis
+        </button>
+        <button
+          onClick={() => setPage("excel-analysis")}
+          style={{
+            background: "#E5322D",
+            color: "#ffffff",
+            border: "none",
+            borderRadius: "6px",
+            padding: "24px 50px",
+            fontWeight: "600",
+            fontSize: "1.2rem",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(229,50,45,0.2)",
+            transition: "all 0.3s ease",
+            minWidth: "250px",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0 4px 12px rgba(229,50,45,0.3)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 2px 8px rgba(229,50,45,0.2)";
+          }}
+        >
+          Excel Analysis
+        </button>
       </div>
     </div>
   );
@@ -189,34 +196,47 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #232526 0%, #414345 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
-        padding: "40px 20px",
-        fontFamily: "Roboto Mono, monospace",
-        color: "#00ffe7",
+        width: "100vw",
+        padding: "40px 60px",
+        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        color: "#333",
+        margin: "0",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        overflowY: "auto",
       }}
     >
       <div
         style={{
-          maxWidth: "600px",
+          maxWidth: "1200px",
           margin: "0 auto",
-          background: "rgba(35, 37, 38, 0.9)",
-          borderRadius: "16px",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-          padding: "32px",
         }}
       >
         <button
           onClick={() => setPage("home")}
           style={{
             background: "transparent",
-            color: "#00ffe7",
-            border: "1px solid #00ffe7",
-            borderRadius: "8px",
-            padding: "8px 16px",
-            marginBottom: "24px",
+            color: "#E5322D",
+            border: "2px solid #E5322D",
+            borderRadius: "6px",
+            padding: "10px 20px",
+            marginBottom: "30px",
             cursor: "pointer",
-            fontFamily: "Roboto Mono, monospace",
+            fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+            fontWeight: "600",
+            transition: "all 0.3s ease",
+            fontSize: "1rem",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.background = "#E5322D";
+            e.currentTarget.style.color = "#ffffff";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.color = "#E5322D";
           }}
         >
           ← Back
@@ -225,8 +245,10 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
         <h2
           style={{
             textAlign: "center",
-            marginBottom: "32px",
-            letterSpacing: "2px",
+            marginBottom: "40px",
+            color: "#E5322D",
+            fontWeight: "700",
+            fontSize: "2rem",
           }}
         >
           PDF Analysis
@@ -234,19 +256,27 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
 
         {!mode && (
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            style={{ display: "flex", flexDirection: "row", gap: "24px", justifyContent: "center" }}
           >
             <button
               onClick={() => setMode("single")}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "16px",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                borderRadius: "6px",
+                padding: "20px 40px",
+                fontWeight: "600",
+                fontSize: "1.1rem",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                minWidth: "250px",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Single PDF Analysis
@@ -254,14 +284,22 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
             <button
               onClick={() => setMode("multiple")}
               style={{
-                background: "linear-gradient(90deg, #007cf0 0%, #00c9ff 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "16px",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                borderRadius: "6px",
+                padding: "20px 40px",
+                fontWeight: "600",
+                fontSize: "1.1rem",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                minWidth: "250px",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Multiple PDF Analysis
@@ -270,12 +308,14 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
         )}
 
         {mode === "single" && (
-          <div>
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
             <label
               style={{
                 display: "block",
-                marginBottom: "8px",
-                fontWeight: "bold",
+                marginBottom: "10px",
+                fontWeight: "600",
+                color: "#555",
+                fontSize: "1rem",
               }}
             >
               Select PDF File:
@@ -289,27 +329,31 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 )
               }
               style={{
-                background: "#232526",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "8px",
+                background: "#f7f7f7",
+                color: "#333",
+                border: "2px solid #ddd",
+                borderRadius: "6px",
+                padding: "12px",
                 width: "100%",
-                marginBottom: "16px",
+                marginBottom: "20px",
+                fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                fontSize: "1rem",
               }}
             />
             <button
               onClick={handleSinglePdfSubmit}
               disabled={loading}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "12px",
-                fontWeight: "bold",
+                borderRadius: "6px",
+                padding: "14px",
+                fontWeight: "600",
                 width: "100%",
                 cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontSize: "1rem",
               }}
             >
               {loading ? "Analyzing..." : "Submit"}
@@ -322,13 +366,15 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }}
               style={{
                 background: "transparent",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "12px",
+                color: "#E5322D",
+                border: "2px solid #E5322D",
+                borderRadius: "6px",
+                padding: "14px",
                 marginTop: "12px",
                 width: "100%",
                 cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "1rem",
               }}
             >
               Cancel
@@ -337,12 +383,14 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
         )}
 
         {mode === "multiple" && (
-          <div>
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
             <label
               style={{
                 display: "block",
-                marginBottom: "8px",
-                fontWeight: "bold",
+                marginBottom: "10px",
+                fontWeight: "600",
+                color: "#555",
+                fontSize: "1rem",
               }}
             >
               Semester 1 PDF:
@@ -356,20 +404,24 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 )
               }
               style={{
-                background: "#232526",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "8px",
+                background: "#f7f7f7",
+                color: "#333",
+                border: "2px solid #ddd",
+                borderRadius: "6px",
+                padding: "12px",
                 width: "100%",
-                marginBottom: "16px",
+                marginBottom: "20px",
+                fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                fontSize: "1rem",
               }}
             />
             <label
               style={{
                 display: "block",
-                marginBottom: "8px",
-                fontWeight: "bold",
+                marginBottom: "10px",
+                fontWeight: "600",
+                color: "#555",
+                fontSize: "1rem",
               }}
             >
               Semester 2 PDF:
@@ -383,27 +435,31 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 )
               }
               style={{
-                background: "#232526",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "8px",
+                background: "#f7f7f7",
+                color: "#333",
+                border: "2px solid #ddd",
+                borderRadius: "6px",
+                padding: "12px",
                 width: "100%",
-                marginBottom: "16px",
+                marginBottom: "20px",
+                fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                fontSize: "1rem",
               }}
             />
             <button
               onClick={handleMultiplePdfSubmit}
               disabled={loading}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "12px",
-                fontWeight: "bold",
+                borderRadius: "6px",
+                padding: "14px",
+                fontWeight: "600",
                 width: "100%",
                 cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontSize: "1rem",
               }}
             >
               {loading ? "Analyzing..." : "Submit"}
@@ -416,13 +472,15 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }}
               style={{
                 background: "transparent",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "12px",
+                color: "#E5322D",
+                border: "2px solid #E5322D",
+                borderRadius: "6px",
+                padding: "14px",
                 marginTop: "12px",
                 width: "100%",
                 cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "1rem",
               }}
             >
               Cancel
@@ -433,25 +491,36 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
         {results && (
           <div
             style={{
-              marginTop: "24px",
-              padding: "16px",
-              background: "#232526",
-              borderRadius: "8px",
+              marginTop: "30px",
+              padding: "20px",
+              background: "#f7f7f7",
+              borderRadius: "6px",
+              border: "1px solid #ddd",
+              maxWidth: "600px",
+              margin: "30px auto 0",
             }}
           >
-            <div style={{ marginTop: "20px", display: "flex", gap: "12px" }}>
+            <div style={{ marginTop: "20px", display: "flex", gap: "16px" }}>
               <button
                 onClick={() => setShowJson(!showJson)}
                 style={{
                   flex: 1,
                   textAlign: "center",
-                  background: "#00ffe7",
-                  color: "#232526",
-                  padding: "10px",
-                  borderRadius: "8px",
+                  background: "#E5322D",
+                  color: "#ffffff",
+                  padding: "14px",
+                  borderRadius: "6px",
                   border: "none",
-                  fontWeight: "bold",
+                  fontWeight: "600",
                   cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  fontSize: "1rem",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = "#c72a26";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = "#E5322D";
                 }}
               >
                 {showJson ? "Hide JSON" : "View JSON"}
@@ -462,15 +531,23 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 style={{
                   flex: 1,
                   textAlign: "center",
-                  background: "#007cf0",
+                  background: "#E5322D",
                   color: "#fff",
-                  padding: "10px",
-                  borderRadius: "8px",
+                  padding: "14px",
+                  borderRadius: "6px",
                   textDecoration: "none",
-                  fontWeight: "bold",
+                  fontWeight: "600",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  transition: "all 0.3s ease",
+                  fontSize: "1rem",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = "#c72a26";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = "#E5322D";
                 }}
               >
                 Download Excel
@@ -481,16 +558,17 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               <div
                 style={{
                   marginTop: "16px",
-                  background: "#1a1a1a",
-                  borderRadius: "8px",
+                  background: "#ffffff",
+                  borderRadius: "6px",
                   padding: "16px",
                   maxHeight: "400px",
                   overflowY: "auto",
+                  border: "1px solid #ddd",
                 }}
               >
                 <pre
                   style={{
-                    color: "#00ffe7",
+                    color: "#333",
                     fontSize: "12px",
                     margin: 0,
                     whiteSpace: "pre-wrap",
@@ -507,7 +585,6 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
     </div>
   );
 };
-
 
 const ExcelAnalysisPage = ({
   setPage,
@@ -580,7 +657,7 @@ const ExcelAnalysisPage = ({
       const data = await res.json();
       
       setResults({
-        excelFile: "", // or provide a valid string if available
+        excelFile: "",
         chartUrl: `${BASE_URL}${data.chart_url}`,
         chartData: data.chart_data,
       });
@@ -641,34 +718,47 @@ const ExcelAnalysisPage = ({
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #232526 0%, #414345 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
-        padding: "40px 20px",
-        fontFamily: "Roboto Mono, monospace",
-        color: "#00ffe7",
+        width: "100vw",
+        padding: "40px 60px",
+        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        color: "#333",
+        margin: "0",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        overflowY: "auto",
       }}
     >
       <div
         style={{
-          maxWidth: "600px",
+          maxWidth: "1200px",
           margin: "0 auto",
-          background: "rgba(35, 37, 38, 0.9)",
-          borderRadius: "16px",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-          padding: "32px",
         }}
       >
         <button
           onClick={() => setPage("home")}
           style={{
             background: "transparent",
-            color: "#00ffe7",
-            border: "1px solid #00ffe7",
-            borderRadius: "8px",
-            padding: "8px 16px",
-            marginBottom: "24px",
+            color: "#E5322D",
+            border: "2px solid #E5322D",
+            borderRadius: "6px",
+            padding: "10px 20px",
+            marginBottom: "30px",
             cursor: "pointer",
-            fontFamily: "Roboto Mono, monospace",
+            fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+            fontWeight: "600",
+            transition: "all 0.3s ease",
+            fontSize: "1rem",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.background = "#E5322D";
+            e.currentTarget.style.color = "#ffffff";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.color = "#E5322D";
           }}
         >
           ← Back
@@ -677,8 +767,10 @@ const ExcelAnalysisPage = ({
         <h2
           style={{
             textAlign: "center",
-            marginBottom: "32px",
-            letterSpacing: "2px",
+            marginBottom: "40px",
+            color: "#E5322D",
+            fontWeight: "700",
+            fontSize: "2rem",
           }}
         >
           Excel Analysis
@@ -686,19 +778,27 @@ const ExcelAnalysisPage = ({
 
         {!mode && (
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+            style={{ display: "flex", flexDirection: "row", gap: "24px", justifyContent: "center", flexWrap: "wrap" }}
           >
             <button
               onClick={() => setMode("kt")}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "16px",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                borderRadius: "6px",
+                padding: "20px 40px",
+                fontWeight: "600",
+                fontSize: "1.1rem",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                minWidth: "220px",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Get KT Students
@@ -706,14 +806,22 @@ const ExcelAnalysisPage = ({
             <button
               onClick={() => setMode("passfail")}
               style={{
-                background: "linear-gradient(90deg, #007cf0 0%, #00c9ff 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "16px",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                borderRadius: "6px",
+                padding: "20px 40px",
+                fontWeight: "600",
+                fontSize: "1.1rem",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                minWidth: "220px",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Pass/Fail Analysis
@@ -721,14 +829,22 @@ const ExcelAnalysisPage = ({
             <button
               onClick={() => setMode("average")}
               style={{
-                background: "linear-gradient(90deg, #00c9ff 0%, #667eea 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "16px",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                borderRadius: "6px",
+                padding: "20px 40px",
+                fontWeight: "600",
+                fontSize: "1.1rem",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                minWidth: "220px",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Average Percentages
@@ -737,12 +853,14 @@ const ExcelAnalysisPage = ({
         )}
 
         {mode === "kt" && (
-          <div>
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
             <label
               style={{
                 display: "block",
-                marginBottom: "8px",
-                fontWeight: "bold",
+                marginBottom: "10px",
+                fontWeight: "600",
+                color: "#555",
+                fontSize: "1rem",
               }}
             >
               Select Excel File:
@@ -750,34 +868,37 @@ const ExcelAnalysisPage = ({
             <input
               type="file"
               accept=".xlsx,.xls"
-              // onChange={(e) => setExcelFile(e.target.files[0])}
               onChange={(e) =>
                 setExcelFile(
                   e.target.files && e.target.files[0] ? e.target.files[0] : null
                 )
               }
               style={{
-                background: "#232526",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "8px",
+                background: "#f7f7f7",
+                color: "#333",
+                border: "2px solid #ddd",
+                borderRadius: "6px",
+                padding: "12px",
                 width: "100%",
-                marginBottom: "16px",
+                marginBottom: "20px",
+                fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                fontSize: "1rem",
               }}
             />
             <button
               onClick={handleKTStudents}
               disabled={loading}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "12px",
-                fontWeight: "bold",
+                borderRadius: "6px",
+                padding: "14px",
+                fontWeight: "600",
                 width: "100%",
                 cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontSize: "1rem",
               }}
             >
               {loading ? "Processing..." : "Submit"}
@@ -789,13 +910,15 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "12px",
+                color: "#E5322D",
+                border: "2px solid #E5322D",
+                borderRadius: "6px",
+                padding: "14px",
                 marginTop: "12px",
                 width: "100%",
                 cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "1rem",
               }}
             >
               Cancel
@@ -804,12 +927,14 @@ const ExcelAnalysisPage = ({
         )}
 
         {mode === "passfail" && (
-          <div>
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
             <label
               style={{
                 display: "block",
-                marginBottom: "8px",
-                fontWeight: "bold",
+                marginBottom: "10px",
+                fontWeight: "600",
+                color: "#555",
+                fontSize: "1rem",
               }}
             >
               Select Excel File:
@@ -817,34 +942,37 @@ const ExcelAnalysisPage = ({
             <input
               type="file"
               accept=".xlsx,.xls"
-              // onChange={(e) => setExcelFile(e.target.files[0])}
               onChange={(e) =>
                 setExcelFile(
                   e.target.files && e.target.files[0] ? e.target.files[0] : null
                 )
               }
               style={{
-                background: "#232526",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "8px",
+                background: "#f7f7f7",
+                color: "#333",
+                border: "2px solid #ddd",
+                borderRadius: "6px",
+                padding: "12px",
                 width: "100%",
-                marginBottom: "16px",
+                marginBottom: "20px",
+                fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                fontSize: "1rem",
               }}
             />
             <button
               onClick={handlePassFailAnalysis}
               disabled={loading}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "12px",
-                fontWeight: "bold",
+                borderRadius: "6px",
+                padding: "14px",
+                fontWeight: "600",
                 width: "100%",
                 cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontSize: "1rem",
               }}
             >
               {loading ? "Processing..." : "Submit"}
@@ -856,13 +984,15 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "12px",
+                color: "#E5322D",
+                border: "2px solid #E5322D",
+                borderRadius: "6px",
+                padding: "14px",
                 marginTop: "12px",
                 width: "100%",
                 cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "1rem",
               }}
             >
               Cancel
@@ -871,58 +1001,65 @@ const ExcelAnalysisPage = ({
         )}
 
         {mode === "average" && (
-          <div>
-            <p style={{ marginBottom: "16px", fontSize: "0.9rem" }}>
+          <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+            <p style={{ marginBottom: "20px", fontSize: "1rem", color: "#666", textAlign: "center" }}>
               Upload 1-8 semester files (at least one required):
             </p>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-              <div key={num} style={{ marginBottom: "12px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "4px",
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Semester {num} (Optional):
-                </label>
-                <input
-                  type="file"
-                  accept=".xlsx,.xls"
-                  onChange={(e) =>
-                    setExcelFiles({
-                      ...excelFiles,
-                      [`file${num}`]:
-                        e.target.files && e.target.files[0]
-                          ? e.target.files[0]
-                          : undefined,
-                    })
-                  }
-                  style={{
-                    background: "#232526",
-                    color: "#00ffe7",
-                    border: "1px solid #00ffe7",
-                    borderRadius: "8px",
-                    padding: "6px",
-                    width: "100%",
-                    fontSize: "0.85rem",
-                  }}
-                />
-              </div>
-            ))}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                <div key={num}>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "6px",
+                      fontSize: "0.95rem",
+                      fontWeight: "600",
+                      color: "#555",
+                    }}
+                  >
+                    Semester {num}:
+                  </label>
+                  <input
+                    type="file"
+                    accept=".xlsx,.xls"
+                    onChange={(e) =>
+                      setExcelFiles({
+                        ...excelFiles,
+                        [`file${num}`]:
+                          e.target.files && e.target.files[0]
+                            ? e.target.files[0]
+                            : undefined,
+                      })
+                    }
+                    style={{
+                      background: "#f7f7f7",
+                      color: "#333",
+                      border: "2px solid #ddd",
+                      borderRadius: "6px",
+                      padding: "10px",
+                      width: "100%",
+                      fontSize: "0.9rem",
+                      fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
             <button
               onClick={handleAveragePercentages}
               disabled={loading}
               style={{
-                background: "linear-gradient(90deg, #00ffe7 0%, #007cf0 100%)",
-                color: "#232526",
+                background: "#E5322D",
+                color: "#ffffff",
                 border: "none",
-                borderRadius: "8px",
-                padding: "12px",
-                fontWeight: "bold",
+                borderRadius: "6px",
+                padding: "14px",
+                fontWeight: "600",
                 width: "100%",
-                marginTop: "16px",
+                marginTop: "24px",
                 cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontSize: "1rem",
               }}
             >
               {loading ? "Processing..." : "Submit"}
@@ -934,13 +1071,15 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#00ffe7",
-                border: "1px solid #00ffe7",
-                borderRadius: "8px",
-                padding: "12px",
+                color: "#E5322D",
+                border: "2px solid #E5322D",
+                borderRadius: "6px",
+                padding: "14px",
                 marginTop: "12px",
                 width: "100%",
                 cursor: "pointer",
+                fontWeight: "600",
+                fontSize: "1rem",
               }}
             >
               Cancel
@@ -949,18 +1088,26 @@ const ExcelAnalysisPage = ({
         )}
 
         {results && results.excelFile && (
-          <div style={{ marginTop: "24px", textAlign: "center" }}>
+          <div style={{ marginTop: "30px", textAlign: "center" }}>
             <a
               href={results.excelFile}
               download
               style={{
                 display: "inline-block",
-                background: "#00ffe7",
-                color: "#232526",
-                padding: "12px 24px",
-                borderRadius: "8px",
+                background: "#E5322D",
+                color: "#ffffff",
+                padding: "14px 32px",
+                borderRadius: "6px",
                 textDecoration: "none",
-                fontWeight: "bold",
+                fontWeight: "600",
+                transition: "all 0.3s ease",
+                fontSize: "1rem",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "#c72a26";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "#E5322D";
               }}
             >
               Download Excel Results
@@ -969,28 +1116,32 @@ const ExcelAnalysisPage = ({
         )}
 
         {results && results.chartUrl && (
-          <div style={{ marginTop: "24px" }}>
-            <h3 style={{ marginBottom: "16px" }}>Pass/Fail Chart:</h3>
+          <div style={{ marginTop: "30px", maxWidth: "900px", margin: "30px auto 0" }}>
+            <h3 style={{ marginBottom: "20px", color: "#333", fontWeight: "600", fontSize: "1.3rem" }}>
+              Pass/Fail Chart:
+            </h3>
             <img
               src={results.chartUrl}
               alt="Pass/Fail Chart"
               style={{
                 width: "100%",
-                borderRadius: "8px",
-                marginBottom: "16px",
+                borderRadius: "6px",
+                marginBottom: "20px",
+                border: "1px solid #ddd",
               }}
             />
             <div
               style={{
-                background: "#232526",
-                padding: "16px",
-                borderRadius: "8px",
-                fontSize: "0.9rem",
+                background: "#f7f7f7",
+                padding: "20px",
+                borderRadius: "6px",
+                fontSize: "0.95rem",
+                border: "1px solid #ddd",
               }}
             >
               {results.chartData.courses.map((course: string, idx: number) => (
-                <div key={idx} style={{ marginBottom: "8px" }}>
-                  <strong>{course}:</strong> Pass:{" "}
+                <div key={idx} style={{ marginBottom: "10px", color: "#555" }}>
+                  <strong style={{ color: "#333" }}>{course}:</strong> Pass:{" "}
                   {results.chartData.pass_counts[idx]}, Fail:{" "}
                   {results.chartData.fail_counts[idx]}
                 </div>
