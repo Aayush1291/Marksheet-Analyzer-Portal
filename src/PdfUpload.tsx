@@ -9,19 +9,15 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
       style={{
         background: "#ffffff",
         minHeight: "100vh",
-        height: "100vh",
-        width: "100vw",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
         color: "#333",
-        padding: "0",
+        padding: "20px",
         margin: "0",
-        position: "fixed",
-        top: 0,
-        left: 0,
       }}
     >
       <h1
@@ -198,15 +194,11 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
       style={{
         background: "#ffffff",
         minHeight: "100vh",
-        width: "100vw",
-        padding: "40px 60px",
+        width: "100%",
+        padding: "40px 60px 60px",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
         color: "#333",
         margin: "0",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        overflowY: "auto",
       }}
     >
       <div
@@ -500,7 +492,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               margin: "30px auto 0",
             }}
           >
-            <div style={{ marginTop: "20px", display: "flex", gap: "16px" }}>
+            <div style={{ display: "flex", gap: "16px" }}>
               <button
                 onClick={() => setShowJson(!showJson)}
                 style={{
@@ -720,15 +712,11 @@ const ExcelAnalysisPage = ({
       style={{
         background: "#ffffff",
         minHeight: "100vh",
-        width: "100vw",
-        padding: "40px 60px",
+        width: "100%",
+        padding: "40px 60px 60px",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
         color: "#333",
         margin: "0",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        overflowY: "auto",
       }}
     >
       <div
@@ -1088,7 +1076,7 @@ const ExcelAnalysisPage = ({
         )}
 
         {results && results.excelFile && (
-          <div style={{ marginTop: "30px", textAlign: "center" }}>
+          <div style={{ marginTop: "30px", textAlign: "center", paddingBottom: "40px" }}>
             <a
               href={results.excelFile}
               download
@@ -1116,7 +1104,7 @@ const ExcelAnalysisPage = ({
         )}
 
         {results && results.chartUrl && (
-          <div style={{ marginTop: "30px", maxWidth: "900px", margin: "30px auto 0" }}>
+          <div style={{ marginTop: "30px", maxWidth: "900px", margin: "30px auto 40px" }}>
             <h3 style={{ marginBottom: "20px", color: "#333", fontWeight: "600", fontSize: "1.3rem" }}>
               Pass/Fail Chart:
             </h3>
