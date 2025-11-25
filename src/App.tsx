@@ -26,7 +26,8 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
           fontSize: "3rem",
           color: "#cf3833ff",
           fontWeight: 700,
-          fontFamily: "Times New Roman"
+          fontFamily: "Times New Roman",
+          textShadow: "2px 2px #f0a299ff",
         }}
       >
         ScanWise
