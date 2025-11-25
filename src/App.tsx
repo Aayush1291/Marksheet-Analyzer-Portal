@@ -171,6 +171,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
           cursor: "pointer",
           fontWeight: 600,
           marginBottom: "30px",
+          backgroundColor: "white"
         }}
       >
         ← Back
@@ -546,6 +547,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
           cursor: "pointer",
           fontWeight: 600,
           marginBottom: "30px",
+          backgroundColor: "white"
         }}
       >
         ← Back
