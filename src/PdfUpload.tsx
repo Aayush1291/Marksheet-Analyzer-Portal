@@ -306,7 +306,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 display: "block",
                 marginBottom: "10px",
                 fontWeight: "600",
-                color: "#555",
+                color: "#cf3833ff",
                 fontSize: "1rem",
               }}
             >
@@ -381,7 +381,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 display: "block",
                 marginBottom: "10px",
                 fontWeight: "600",
-                color: "#555",
+                color: "#cf3833ff",
                 fontSize: "1rem",
               }}
             >
@@ -412,7 +412,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 display: "block",
                 marginBottom: "10px",
                 fontWeight: "600",
-                color: "#555",
+                color: "#cf3833ff",
                 fontSize: "1rem",
               }}
             >
@@ -847,7 +847,7 @@ const ExcelAnalysisPage = ({
                 display: "block",
                 marginBottom: "10px",
                 fontWeight: "600",
-                color: "#555",
+                color: "#cf3833ff",
                 fontSize: "1rem",
               }}
             >
@@ -921,7 +921,7 @@ const ExcelAnalysisPage = ({
                 display: "block",
                 marginBottom: "10px",
                 fontWeight: "600",
-                color: "#555",
+                color: "#cf3833ff",
                 fontSize: "1rem",
               }}
             >
@@ -1002,7 +1002,7 @@ const ExcelAnalysisPage = ({
                       marginBottom: "6px",
                       fontSize: "0.95rem",
                       fontWeight: "600",
-                      color: "#555",
+                      color: "#cf3833ff",
                     }}
                   >
                     Semester {num}:
@@ -1128,7 +1128,7 @@ const ExcelAnalysisPage = ({
               }}
             >
               {results.chartData.courses.map((course: string, idx: number) => (
-                <div key={idx} style={{ marginBottom: "10px", color: "#555" }}>
+                <div key={idx} style={{ marginBottom: "10px", color: "#cf3833ff" }}>
                   <strong style={{ color: "#cf3833ff" }}>{course}:</strong> Pass:{" "}
                   {results.chartData.pass_counts[idx]}, Fail:{" "}
                   {results.chartData.fail_counts[idx]}

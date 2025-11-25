@@ -28,6 +28,7 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
           fontWeight: 700,
           fontFamily: "Times New Roman",
           textShadow: "2px 2px #f0a299ff",
+          // backgroundColor: "white"
         }}
       >
         ScanWise
@@ -229,7 +230,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               display: "block",
               marginBottom: "10px",
               fontWeight: 600,
-              color: "#555",
+              color: "#cf3833ff"
             }}
           >
             Select PDF File:
@@ -284,6 +285,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
+              backgroundColor: "white"
             }}
           >
             Cancel
@@ -360,6 +362,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
+              backgroundColor: "white"
             }}
           >
             Cancel
@@ -660,6 +663,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
+              backgroundColor: "white"
+
             }}
           >
             Cancel
@@ -719,6 +724,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
+              backgroundColor: "white"
+
             }}
           >
             Cancel
@@ -811,6 +818,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
+              backgroundColor: "white"
+
             }}
           >
             Cancel
