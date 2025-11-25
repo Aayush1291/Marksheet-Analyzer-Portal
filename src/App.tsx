@@ -15,7 +15,7 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
-        color: "#333",
+        color: "#cf3833ff",
         padding: "20px",
       }}
     >
@@ -24,8 +24,9 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
           textAlign: "center",
           marginBottom: "50px",
           fontSize: "3rem",
-          color: "#333",
+          color: "#cf3833ff",
           fontWeight: 700,
+          fontFamily: "Times New Roman"
         }}
       >
         ScanWise
@@ -35,7 +36,7 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
         <button
           onClick={() => setPage("pdf-analysis")}
           style={{
-            background: "#333",
+            background: "#cf3833ff",
             color: "#ffffff",
             border: "none",
             borderRadius: "6px",
@@ -52,7 +53,7 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
         <button
           onClick={() => setPage("excel-analysis")}
           style={{
-            background: "#333",
+            background: "#cf3833ff",
             color: "#ffffff",
             border: "none",
             borderRadius: "6px",
@@ -161,8 +162,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
         onClick={() => setPage("home")}
         style={{
           background: "transparent",
-          color: "#333",
-          border: "2px solid #333",
+          color: "#cf3833ff",
+          border: "2px solid #cf3833ff",
           borderRadius: "6px",
           padding: "10px 20px",
           cursor: "pointer",
@@ -176,7 +177,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
       <h2
         style={{
           textAlign: "center",
-          color: "#333",
+          color: "#cf3833ff",
           fontWeight: 700,
           marginBottom: "40px",
           fontSize: "2rem",
@@ -190,7 +191,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
           <button
             onClick={() => setMode("single")}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "20px 40px",
               borderRadius: "6px",
@@ -205,7 +206,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
           <button
             onClick={() => setMode("multiple")}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "20px 40px",
               borderRadius: "6px",
@@ -253,7 +254,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
             onClick={handleSinglePdfSubmit}
             disabled={loading}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px",
               borderRadius: "6px",
@@ -277,8 +278,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               padding: "14px",
               borderRadius: "6px",
               width: "100%",
-              color: "#333",
-              border: "2px solid #333",
+              color: "#cf3833ff",
+              border: "2px solid #cf3833ff",
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
@@ -330,7 +331,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
             onClick={handleMultiplePdfSubmit}
             disabled={loading}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px",
               borderRadius: "6px",
@@ -353,8 +354,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               padding: "14px",
               borderRadius: "6px",
               width: "100%",
-              color: "#333",
-              border: "2px solid #333",
+              color: "#cf3833ff",
+              border: "2px solid #cf3833ff",
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
@@ -383,7 +384,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               onClick={() => setShowJson(!showJson)}
               style={{
                 flex: 1,
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#fff",
                 padding: "14px",
                 borderRadius: "6px",
@@ -399,7 +400,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
               download
               style={{
                 flex: 1,
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#fff",
                 padding: "14px",
                 borderRadius: "6px",
@@ -534,8 +535,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
         onClick={() => setPage("home")}
         style={{
           background: "transparent",
-          color: "#333",
-          border: "2px solid #333",
+          color: "#cf3833ff",
+          border: "2px solid #cf3833ff",
           borderRadius: "6px",
           padding: "10px 20px",
           cursor: "pointer",
@@ -550,7 +551,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
         style={{
           textAlign: "center",
           marginBottom: "40px",
-          color: "#333",
+          color: "#cf3833ff",
           fontWeight: 700,
           fontSize: "2rem",
         }}
@@ -563,7 +564,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
           <button
             onClick={() => setMode("kt")}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "20px 40px",
               borderRadius: "6px",
@@ -578,7 +579,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
           <button
             onClick={() => setMode("passfail")}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "20px 40px",
               borderRadius: "6px",
@@ -593,7 +594,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
           <button
             onClick={() => setMode("average")}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "20px 40px",
               borderRadius: "6px",
@@ -631,7 +632,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
             onClick={handleKT}
             disabled={loading}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px",
               borderRadius: "6px",
@@ -653,8 +654,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               padding: "14px",
               borderRadius: "6px",
               width: "100%",
-              color: "#333",
-              border: "2px solid #333",
+              color: "#cf3833ff",
+              border: "2px solid #cf3833ff",
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
@@ -690,7 +691,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
             onClick={handlePassFail}
             disabled={loading}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px",
               borderRadius: "6px",
@@ -712,8 +713,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               padding: "14px",
               borderRadius: "6px",
               width: "100%",
-              color: "#333",
-              border: "2px solid #333",
+              color: "#cf3833ff",
+              border: "2px solid #cf3833ff",
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
@@ -781,7 +782,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
             onClick={handleAverage}
             disabled={loading}
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px",
               borderRadius: "6px",
@@ -804,8 +805,8 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
               padding: "14px",
               borderRadius: "6px",
               width: "100%",
-              color: "#333",
-              border: "2px solid #333",
+              color: "#cf3833ff",
+              border: "2px solid #cf3833ff",
               background: "transparent",
               fontWeight: 600,
               cursor: "pointer",
@@ -823,7 +824,7 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
             href={results.excelFile}
             download
             style={{
-              background: "#333",
+              background: "#cf3833ff",
               color: "#fff",
               padding: "14px 32px",
               borderRadius: "6px",

@@ -15,7 +15,7 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
-        color: "#333",
+        color: "#cf3833ff",
         padding: "20px",
         margin: "0",
       }}
@@ -25,7 +25,7 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
           textAlign: "center",
           marginBottom: "50px",
           fontSize: "3rem",
-          color: "#333",
+          color: "#cf3833ff",
           fontWeight: "700",
         }}
       >
@@ -35,7 +35,7 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
         <button
           onClick={() => setPage("pdf-analysis")}
           style={{
-            background: "#333",
+            background: "#cf3833ff",
             color: "#ffffff",
             border: "none",
             borderRadius: "6px",
@@ -61,7 +61,7 @@ const HomePage = ({ setPage }: { setPage: (page: string) => void }) => {
         <button
           onClick={() => setPage("excel-analysis")}
           style={{
-            background: "#333",
+            background: "#cf3833ff",
             color: "#ffffff",
             border: "none",
             borderRadius: "6px",
@@ -197,7 +197,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
         width: "100%",
         padding: "40px 60px 60px",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
-        color: "#333",
+        color: "#cf3833ff",
         margin: "0",
       }}
     >
@@ -211,8 +211,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
           onClick={() => setPage("home")}
           style={{
             background: "transparent",
-            color: "#333",
-            border: "2px solid #333",
+            color: "#cf3833ff",
+            border: "2px solid #cf3833ff",
             borderRadius: "6px",
             padding: "10px 20px",
             marginBottom: "30px",
@@ -223,12 +223,12 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
             fontSize: "1rem",
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.background = "#333";
+            e.currentTarget.style.background = "#cf3833ff";
             e.currentTarget.style.color = "#ffffff";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.background = "transparent";
-            e.currentTarget.style.color = "#333";
+            e.currentTarget.style.color = "#cf3833ff";
           }}
         >
           ← Back
@@ -238,7 +238,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
           style={{
             textAlign: "center",
             marginBottom: "40px",
-            color: "#333",
+            color: "#cf3833ff",
             fontWeight: "700",
             fontSize: "2rem",
           }}
@@ -253,7 +253,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
             <button
               onClick={() => setMode("single")}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -265,10 +265,10 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 minWidth: "250px",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Single PDF Analysis
@@ -276,7 +276,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
             <button
               onClick={() => setMode("multiple")}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -288,10 +288,10 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 minWidth: "250px",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Multiple PDF Analysis
@@ -322,7 +322,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }
               style={{
                 background: "#f7f7f7",
-                color: "#333",
+                color: "#cf3833ff",
                 border: "2px solid #ddd",
                 borderRadius: "6px",
                 padding: "12px",
@@ -336,7 +336,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               onClick={handleSinglePdfSubmit}
               disabled={loading}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -358,8 +358,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }}
               style={{
                 background: "transparent",
-                color: "#333",
-                border: "2px solid #333",
+                color: "#cf3833ff",
+                border: "2px solid #cf3833ff",
                 borderRadius: "6px",
                 padding: "14px",
                 marginTop: "12px",
@@ -397,7 +397,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }
               style={{
                 background: "#f7f7f7",
-                color: "#333",
+                color: "#cf3833ff",
                 border: "2px solid #ddd",
                 borderRadius: "6px",
                 padding: "12px",
@@ -428,7 +428,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }
               style={{
                 background: "#f7f7f7",
-                color: "#333",
+                color: "#cf3833ff",
                 border: "2px solid #ddd",
                 borderRadius: "6px",
                 padding: "12px",
@@ -442,7 +442,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               onClick={handleMultiplePdfSubmit}
               disabled={loading}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -464,8 +464,8 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               }}
               style={{
                 background: "transparent",
-                color: "#333",
-                border: "2px solid #333",
+                color: "#cf3833ff",
+                border: "2px solid #cf3833ff",
                 borderRadius: "6px",
                 padding: "14px",
                 marginTop: "12px",
@@ -498,7 +498,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 style={{
                   flex: 1,
                   textAlign: "center",
-                  background: "#333",
+                  background: "#cf3833ff",
                   color: "#ffffff",
                   padding: "14px",
                   borderRadius: "6px",
@@ -509,10 +509,10 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                   fontSize: "1rem",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.background = "#333";
+                  e.currentTarget.style.background = "#cf3833ff";
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.background = "#333";
+                  e.currentTarget.style.background = "#cf3833ff";
                 }}
               >
                 {showJson ? "Hide JSON" : "View JSON"}
@@ -523,7 +523,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                 style={{
                   flex: 1,
                   textAlign: "center",
-                  background: "#333",
+                  background: "#cf3833ff",
                   color: "#fff",
                   padding: "14px",
                   borderRadius: "6px",
@@ -536,10 +536,10 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
                   fontSize: "1rem",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.background = "#333";
+                  e.currentTarget.style.background = "#cf3833ff";
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.background = "#333";
+                  e.currentTarget.style.background = "#cf3833ff";
                 }}
               >
                 Download Excel
@@ -560,7 +560,7 @@ const PdfAnalysisPage = ({ setPage }: { setPage: (page: string) => void }) => {
               >
                 <pre
                   style={{
-                    color: "#333",
+                    color: "#cf3833ff",
                     fontSize: "12px",
                     margin: 0,
                     whiteSpace: "pre-wrap",
@@ -715,7 +715,7 @@ const ExcelAnalysisPage = ({
         width: "100%",
         padding: "40px 60px 60px",
         fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
-        color: "#333",
+        color: "#cf3833ff",
         margin: "0",
       }}
     >
@@ -729,8 +729,8 @@ const ExcelAnalysisPage = ({
           onClick={() => setPage("home")}
           style={{
             background: "transparent",
-            color: "#333",
-            border: "2px solid #333",
+            color: "#cf3833ff",
+            border: "2px solid #cf3833ff",
             borderRadius: "6px",
             padding: "10px 20px",
             marginBottom: "30px",
@@ -741,12 +741,12 @@ const ExcelAnalysisPage = ({
             fontSize: "1rem",
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.background = "#333";
+            e.currentTarget.style.background = "#cf3833ff";
             e.currentTarget.style.color = "#ffffff";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.background = "transparent";
-            e.currentTarget.style.color = "#333";
+            e.currentTarget.style.color = "#cf3833ff";
           }}
         >
           ← Back
@@ -756,7 +756,7 @@ const ExcelAnalysisPage = ({
           style={{
             textAlign: "center",
             marginBottom: "40px",
-            color: "#333",
+            color: "#cf3833ff",
             fontWeight: "700",
             fontSize: "2rem",
           }}
@@ -771,7 +771,7 @@ const ExcelAnalysisPage = ({
             <button
               onClick={() => setMode("kt")}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -783,10 +783,10 @@ const ExcelAnalysisPage = ({
                 minWidth: "220px",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Get KT Students
@@ -794,7 +794,7 @@ const ExcelAnalysisPage = ({
             <button
               onClick={() => setMode("passfail")}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -806,10 +806,10 @@ const ExcelAnalysisPage = ({
                 minWidth: "220px",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Pass/Fail Analysis
@@ -817,7 +817,7 @@ const ExcelAnalysisPage = ({
             <button
               onClick={() => setMode("average")}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -829,10 +829,10 @@ const ExcelAnalysisPage = ({
                 minWidth: "220px",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Average Percentages
@@ -863,7 +863,7 @@ const ExcelAnalysisPage = ({
               }
               style={{
                 background: "#f7f7f7",
-                color: "#333",
+                color: "#cf3833ff",
                 border: "2px solid #ddd",
                 borderRadius: "6px",
                 padding: "12px",
@@ -877,7 +877,7 @@ const ExcelAnalysisPage = ({
               onClick={handleKTStudents}
               disabled={loading}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -898,8 +898,8 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#333",
-                border: "2px solid #333",
+                color: "#cf3833ff",
+                border: "2px solid #cf3833ff",
                 borderRadius: "6px",
                 padding: "14px",
                 marginTop: "12px",
@@ -937,7 +937,7 @@ const ExcelAnalysisPage = ({
               }
               style={{
                 background: "#f7f7f7",
-                color: "#333",
+                color: "#cf3833ff",
                 border: "2px solid #ddd",
                 borderRadius: "6px",
                 padding: "12px",
@@ -951,7 +951,7 @@ const ExcelAnalysisPage = ({
               onClick={handlePassFailAnalysis}
               disabled={loading}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -972,8 +972,8 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#333",
-                border: "2px solid #333",
+                color: "#cf3833ff",
+                border: "2px solid #cf3833ff",
                 borderRadius: "6px",
                 padding: "14px",
                 marginTop: "12px",
@@ -1021,7 +1021,7 @@ const ExcelAnalysisPage = ({
                     }
                     style={{
                       background: "#f7f7f7",
-                      color: "#333",
+                      color: "#cf3833ff",
                       border: "2px solid #ddd",
                       borderRadius: "6px",
                       padding: "10px",
@@ -1037,7 +1037,7 @@ const ExcelAnalysisPage = ({
               onClick={handleAveragePercentages}
               disabled={loading}
               style={{
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "6px",
@@ -1059,8 +1059,8 @@ const ExcelAnalysisPage = ({
               }}
               style={{
                 background: "transparent",
-                color: "#333",
-                border: "2px solid #333",
+                color: "#cf3833ff",
+                border: "2px solid #cf3833ff",
                 borderRadius: "6px",
                 padding: "14px",
                 marginTop: "12px",
@@ -1082,7 +1082,7 @@ const ExcelAnalysisPage = ({
               download
               style={{
                 display: "inline-block",
-                background: "#333",
+                background: "#cf3833ff",
                 color: "#ffffff",
                 padding: "14px 32px",
                 borderRadius: "6px",
@@ -1092,10 +1092,10 @@ const ExcelAnalysisPage = ({
                 fontSize: "1rem",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.background = "#cf3833ff";
               }}
             >
               Download Excel Results
@@ -1105,7 +1105,7 @@ const ExcelAnalysisPage = ({
 
         {results && results.chartUrl && (
           <div style={{ marginTop: "30px", maxWidth: "900px", margin: "30px auto 40px" }}>
-            <h3 style={{ marginBottom: "20px", color: "#333", fontWeight: "600", fontSize: "1.3rem" }}>
+            <h3 style={{ marginBottom: "20px", color: "#cf3833ff", fontWeight: "600", fontSize: "1.3rem" }}>
               Pass/Fail Chart:
             </h3>
             <img
@@ -1129,7 +1129,7 @@ const ExcelAnalysisPage = ({
             >
               {results.chartData.courses.map((course: string, idx: number) => (
                 <div key={idx} style={{ marginBottom: "10px", color: "#555" }}>
-                  <strong style={{ color: "#333" }}>{course}:</strong> Pass:{" "}
+                  <strong style={{ color: "#cf3833ff" }}>{course}:</strong> Pass:{" "}
                   {results.chartData.pass_counts[idx]}, Fail:{" "}
                   {results.chartData.fail_counts[idx]}
                 </div>

@@ -34,17 +34,17 @@ html, body, #root {
 
 body {
   margin: 0;
-  color: #333;
+  color: #cf3833ff;
 }
 
 a {
   font-weight: 500;
-  color: #333;
+  color: #cf3833ff;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #333;
+  color: #cf3833ff;
 }
 
 h1 {
