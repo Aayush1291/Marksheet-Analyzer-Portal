@@ -6,8 +6,11 @@
   padding: 0;
 }
 
+/* App-level main container can stay as is, only background-color remains */
 .app-container {
-  width: 100%;
-  min-height: 100vh;
+  background-image: url('/public/img1.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;      /* adjust tile size */
+  background-position: top left;
   background-color: #ffffff;
 }

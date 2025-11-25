@@ -18,28 +18,33 @@
   box-sizing: border-box;
 }
 
+/* APPLY TILED BACKGROUND */
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
   width: 100%;
   min-height: 100vh;
+
+  background-image: url('/public/img1.svg'); /* from public/ folder */
+  background-repeat: repeat;         /* tile like wallpaper */
+  background-size: 160px 160px;      /* adjust tile size */
+  background-position: top left;
+  background-color: #ffffff;
 }
 
 body {
   margin: 0;
-  background-color: #ffffff;
   color: #333;
 }
 
 a {
   font-weight: 500;
-  color: #E5322D;
+  color: #333;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #c72a26;
+  color: #333;
 }
 
 h1 {
