@@ -4,45 +4,38 @@ import { API_URL } from "../config";
 const BASE_URL = API_URL;
 
 /* ===========================
-   HOME PAGE (NEW UI)
+   HOME PAGE (NEW UI - DARK + FLOATING OBJECTS)
    =========================== */
-const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">>; }) => {
+
+const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">> }) => {
   return (
     <div
       style={{
         position: "relative",
         minHeight: "100vh",
         width: "100%",
-        background: "#f1f2f4",
+        background: "#f3f4f6",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        fontFamily: "'Inter', 'Open Sans', 'Segoe UI', sans-serif",
         color: "#111827",
         overflow: "hidden",
         padding: "24px 16px",
       }}
     >
-      {/* === Floating SVG-style icons (background) === */}
 
-      {/* Big PDF document (top-left) */}
-      <div
-        style={{
-          position: "absolute",
-          top: "8%",
-          left: "6%",
-          opacity: 0.55,
-        }}
-      >
+      {/* ====== FLOATING ICONS ====== */}
+
+      <div style={{ position: "absolute", top: "10%", left: "6%", opacity: 0.18 }}>
         <div
           style={{
-            width: 190,
-            height: 220,
-            borderRadius: 20,
-            border: "4px solid #4b5563",
+            width: 120,
+            height: 140,
+            borderRadius: 16,
+            border: "3px solid #9ca3af",
             background: "#f9fafb",
             position: "relative",
-            overflow: "hidden",
           }}
         >
           <div
@@ -50,8 +43,8 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
               position: "absolute",
               top: 0,
               right: 0,
-              width: 70,
-              height: 70,
+              width: 38,
+              height: 38,
               background: "#e5e7eb",
               clipPath: "polygon(0 0, 100% 0, 100% 100%)",
             }}
@@ -63,9 +56,9 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              fontSize: 26,
               fontWeight: 800,
-              fontSize: 40,
-              color: "#111827",
+              color: "#4b5563",
             }}
           >
             PDF
@@ -73,258 +66,123 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
         </div>
       </div>
 
-      {/* XLS document (top-right) */}
-      <div
-        style={{
-          position: "absolute",
-          top: "9%",
-          right: "6%",
-          opacity: 0.55,
-        }}
-      >
+      <div style={{ position: "absolute", top: "13%", right: "6%", opacity: 0.18 }}>
         <div
           style={{
-            width: 190,
-            height: 220,
-            borderRadius: 20,
-            border: "4px solid #4b5563",
+            width: 120,
+            height: 140,
+            borderRadius: 16,
+            border: "3px solid #9ca3af",
             background: "#f9fafb",
             position: "relative",
-            overflow: "hidden",
           }}
         >
           <div
             style={{
               position: "absolute",
-              top: 22,
-              right: 18,
-              padding: "8px 20px",
+              top: 14,
+              left: "50%",
+              transform: "translateX(-50%)",
+              padding: "4px 12px",
               borderRadius: 999,
               background: "#111827",
-              color: "#ffffff",
-              fontSize: 20,
-              fontWeight: 800,
-              boxShadow: "0 10px 20px rgba(15,23,42,0.4)",
+              color: "#fff",
+              fontWeight: 600,
+              fontSize: 14,
             }}
           >
             XLS
           </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: 26,
-              right: 40,
-              width: 26,
-              height: 26,
-              borderRadius: 4,
-              borderBottom: "3px solid #4b5563",
-              borderRight: "3px solid #4b5563",
-              transform: "rotate(45deg)",
-            }}
-          />
         </div>
       </div>
 
-      {/* Folder (bottom-center) */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "8%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          opacity: 0.7,
-        }}
-      >
+      <div style={{ position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)", opacity: 0.22 }}>
         <div
           style={{
-            width: 210,
-            height: 130,
-            borderRadius: 24,
-            background: "#374151",
+            width: 140,
+            height: 86,
+            background: "#4b5563",
+            borderRadius: 18,
             position: "relative",
           }}
         >
           <div
             style={{
+              width: 80,
+              height: 26,
+              background: "#4b5563",
+              borderRadius: 10,
               position: "absolute",
-              top: -32,
-              left: 22,
-              width: 120,
-              height: 40,
-              borderRadius: 18,
-              background: "#374151",
+              top: -20,
+              left: 16,
             }}
           />
         </div>
       </div>
 
-      {/* Small chart (bottom-left) */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "16%",
-          left: "9%",
-          opacity: 0.45,
-        }}
-      >
+      <div style={{ position: "absolute", bottom: "14%", left: "8%", opacity: 0.15 }}>
         <div
           style={{
-            width: 130,
-            height: 100,
-            borderRadius: 18,
-            border: "3px solid #9ca3af",
-            padding: "14px 16px",
+            width: 90,
+            height: 72,
+            border: "2px solid #d1d5db",
+            borderRadius: 12,
+            padding: "10px 12px",
             display: "flex",
+            gap: 6,
             alignItems: "flex-end",
-            gap: 8,
           }}
         >
-          <div
-            style={{
-              width: 12,
-              height: 30,
-              borderRadius: 6,
-              background: "#9ca3af",
-            }}
-          />
-          <div
-            style={{
-              width: 12,
-              height: 44,
-              borderRadius: 6,
-              background: "#9ca3af",
-            }}
-          />
-          <div
-            style={{
-              width: 12,
-              height: 60,
-              borderRadius: 6,
-              background: "#9ca3af",
-            }}
-          />
+          <div style={{ width: 10, height: 18, background: "#9ca3af", borderRadius: 4 }} />
+          <div style={{ width: 10, height: 28, background: "#9ca3af", borderRadius: 4 }} />
+          <div style={{ width: 10, height: 40, background: "#9ca3af", borderRadius: 4 }} />
         </div>
       </div>
 
-      {/* Magnifier with chart (bottom-right) */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "10%",
-          right: "8%",
-          opacity: 0.65,
-        }}
-      >
+      <div style={{ position: "absolute", bottom: "12%", right: "8%", opacity: 0.18 }}>
         <div
           style={{
-            width: 200,
-            height: 200,
+            width: 120,
+            height: 120,
             borderRadius: "50%",
-            border: "6px solid #4b5563",
+            border: "4px solid #9ca3af",
             position: "relative",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "#f9fafb",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              gap: 10,
-            }}
-          >
-            <div
-              style={{
-                width: 16,
-                height: 48,
-                borderRadius: 8,
-                background: "#9ca3af",
-              }}
-            />
-            <div
-              style={{
-                width: 16,
-                height: 72,
-                borderRadius: 8,
-                background: "#9ca3af",
-              }}
-            />
-            <div
-              style={{
-                width: 16,
-                height: 96,
-                borderRadius: 8,
-                background: "#9ca3af",
-              }}
-            />
+          <div style={{ display: "flex", alignItems: "flex-end", gap: 6 }}>
+            <div style={{ width: 10, height: 22, background: "#d1d5db", borderRadius: 4 }} />
+            <div style={{ width: 10, height: 32, background: "#d1d5db", borderRadius: 4 }} />
+            <div style={{ width: 10, height: 44, background: "#d1d5db", borderRadius: 4 }} />
           </div>
 
           <div
             style={{
               position: "absolute",
-              right: -18,
-              bottom: -40,
-              width: 36,
-              height: 96,
+              right: -10,
+              bottom: -24,
+              width: 22,
+              height: 60,
               borderRadius: 999,
-              background: "#374151",
+              background: "#4b5563",
               transform: "rotate(35deg)",
-              boxShadow: "0 10px 20px rgba(15,23,42,0.4)",
             }}
           />
         </div>
       </div>
 
-      {/* small dots */}
-      {[
-        { top: "18%", left: "35%" },
-        { top: "26%", right: "32%" },
-        { top: "60%", left: "18%" },
-        { bottom: "24%", right: "30%" },
-        { bottom: "18%", left: "30%" },
-      ].map((pos, idx) => (
-        <div
-          key={idx}
-          style={{
-            position: "absolute",
-            width: 10,
-            height: 10,
-            borderRadius: "50%",
-            background: "#d1d5db",
-            opacity: 0.8,
-            ...pos,
-          }}
-        />
-      ))}
+      {/* ===== MAIN CONTENT ===== */}
 
-      {/* main center content */}
-      <div
-        style={{
-          textAlign: "center",
-          maxWidth: 900,
-          transform: "translateY(-40px)",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: 64,
-            margin: 0,
-            marginBottom: 30,
-            fontWeight: 800,
-            letterSpacing: "0.04em",
-          }}
-        >
-          ScanWise
-        </h1>
+      <div style={{ maxWidth: 720, textAlign: "center" }}>
+        <h1 style={{ fontSize: 42, fontWeight: 800, marginBottom: 12 }}>ScanWise</h1>
 
         <p
           style={{
-            marginTop: 0,
-            marginBottom: 40,
-            fontSize: 18,
-            lineHeight: 1.7,
+            marginBottom: 32,
+            fontSize: 17,
+            lineHeight: 1.6,
             color: "#4b5563",
           }}
         >
@@ -332,41 +190,19 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
           analysis in just a few clicks.
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 32,
-            flexWrap: "wrap",
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
           <button
             onClick={() => setPage("pdf-analysis")}
             style={{
-              minWidth: 320,
-              padding: "20px 40px",
-              borderRadius: 14,
+              minWidth: 240,
+              padding: "16px 36px",
+              background: "#111827",
+              borderRadius: 999,
+              color: "#fff",
+              fontWeight: 700,
               border: "none",
               cursor: "pointer",
-              background: "#111827",
-              color: "#ffffff",
-              fontWeight: 700,
-              fontSize: 22,
-              boxShadow: "0 16px 32px rgba(15,23,42,0.45)",
-              transition:
-                "transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 40px rgba(15,23,42,0.55)";
-              e.currentTarget.style.background = "#020617";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 16px 32px rgba(15,23,42,0.45)";
-              e.currentTarget.style.background = "#111827";
+              fontSize: 16,
             }}
           >
             PDF Analysis
@@ -375,30 +211,15 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
           <button
             onClick={() => setPage("excel-analysis")}
             style={{
-              minWidth: 320,
-              padding: "20px 40px",
-              borderRadius: 14,
+              minWidth: 240,
+              padding: "16px 36px",
+              background: "#111827",
+              borderRadius: 999,
+              color: "#fff",
+              fontWeight: 700,
               border: "none",
               cursor: "pointer",
-              background: "#111827",
-              color: "#ffffff",
-              fontWeight: 700,
-              fontSize: 22,
-              boxShadow: "0 16px 32px rgba(15,23,42,0.45)",
-              transition:
-                "transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 40px rgba(15,23,42,0.55)";
-              e.currentTarget.style.background = "#020617";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 16px 32px rgba(15,23,42,0.45)";
-              e.currentTarget.style.background = "#111827";
+              fontSize: 16,
             }}
           >
             Excel Analysis
@@ -410,13 +231,16 @@ const HomePage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"h
 };
 
 /* ===========================
-   PDF ANALYSIS PAGE
+   PDF ANALYSIS PAGE (NEW UI)
    =========================== */
 
-const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">>; }) => {  const [mode, setMode] = useState<null | "single" | "multiple">(null);
+const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">> }) => {
+  const [mode, setMode] = useState<null | "single" | "multiple">(null);
+
   const [singlePdf, setSinglePdf] = useState<File | null>(null);
   const [sem1Pdf, setSem1Pdf] = useState<File | null>(null);
   const [sem2Pdf, setSem2Pdf] = useState<File | null>(null);
+
   const [loading, setLoading] = useState(false);
   const [showJson, setShowJson] = useState(false);
 
@@ -425,55 +249,44 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
     jsonFile: string;
     excelFile: string;
   }
+
   const [results, setResults] = useState<PdfResults | null>(null);
 
+  /* ---- SINGLE PDF SUBMIT ---- */
   const handleSinglePdfSubmit = async () => {
-    if (!singlePdf) {
-      alert("Please select a PDF file.");
-      return;
-    }
+    if (!singlePdf) return alert("Please select a PDF file.");
 
     const formData = new FormData();
     formData.append("marksheet", singlePdf);
 
     try {
       setLoading(true);
-      const res = await fetch(
-        `${BASE_URL}/analysis/get-single-pdf-percentage-analysis-data/`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const res = await fetch(`${BASE_URL}/analysis/get-single-pdf-percentage-analysis-data/`, {
+        method: "POST",
+        body: formData,
+      });
 
-      if (!res.ok) throw new Error("Failed to upload file");
+      if (!res.ok) throw new Error("Failed to upload PDF");
 
       const data = await res.json();
+
       if (data.success) {
         setResults({
           data: data.results,
           jsonFile: `${BASE_URL}${data.json_file}`,
           excelFile: `${BASE_URL}${data.excel_file}`,
         });
-      } else {
-        alert(data.message || "Something went wrong.");
-      }
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
+      } else alert(data.message || "Something went wrong.");
+    } catch (e: any) {
+      alert(e.message);
     } finally {
       setLoading(false);
     }
   };
 
+  /* ---- MULTIPLE PDF SUBMIT ---- */
   const handleMultiplePdfSubmit = async () => {
-    if (!sem1Pdf || !sem2Pdf) {
-      alert("Please select both PDF files.");
-      return;
-    }
+    if (!sem1Pdf || !sem2Pdf) return alert("Select both PDFs.");
 
     const formData = new FormData();
     formData.append("sem1_pdf", sem1Pdf);
@@ -481,32 +294,24 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
 
     try {
       setLoading(true);
-      const res = await fetch(
-        `${BASE_URL}/analysis/get-multiple-pdf-percentage-analysis-data/`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const res = await fetch(`${BASE_URL}/analysis/get-multiple-pdf-percentage-analysis-data/`, {
+        method: "POST",
+        body: formData,
+      });
 
       if (!res.ok) throw new Error("Failed to upload files");
 
       const data = await res.json();
+
       if (data.success) {
         setResults({
           data: data.results,
           jsonFile: `${BASE_URL}${data.json_file}`,
           excelFile: `${BASE_URL}${data.excel_file}`,
         });
-      } else {
-        alert(data.message || "Something went wrong.");
-      }
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
+      } else alert(data.message || "Something went wrong.");
+    } catch (e: any) {
+      alert(e.message);
     } finally {
       setLoading(false);
     }
@@ -515,398 +320,287 @@ const PdfAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAc
   return (
     <div
       style={{
-        background: "#f1f2f4",
+        background: "#ffffff",
         minHeight: "100vh",
         width: "100%",
-        padding: "32px 16px",
-        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        padding: "40px 60px 60px",
+        fontFamily: "'Inter','Open Sans','Segoe UI',sans-serif",
         color: "#111827",
-        display: "flex",
-        justifyContent: "center",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 980,
-          position: "relative",
-        }}
-      >
-        {/* card */}
-        <div
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <button
+          onClick={() => setPage("home")}
           style={{
-            background: "#ffffff",
-            borderRadius: 24,
-            boxShadow: "0 18px 48px rgba(15,23,42,0.12)",
-            padding: "32px 28px 32px",
+            background: "transparent",
+            color: "#111827",
+            border: "2px solid #111827",
+            borderRadius: 999,
+            padding: "10px 20px",
+            fontWeight: 600,
+            cursor: "pointer",
+            marginBottom: 28,
           }}
         >
-          <button
-            onClick={() => setPage("home")}
-            style={{
-              background: "transparent",
-              color: "#111827",
-              border: "2px solid #111827",
-              borderRadius: 999,
-              padding: "8px 18px",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              marginBottom: 24,
-            }}
-          >
-            ← Back to Home
-          </button>
+          ← Back
+        </button>
 
-          <h2
-            style={{
-              textAlign: "center",
-              marginBottom: 16,
-              color: "#111827",
-              fontWeight: 700,
-              fontSize: "2rem",
-            }}
-          >
-            PDF Analysis
-          </h2>
-          <p
-            style={{
-              textAlign: "center",
-              marginBottom: 32,
-              fontSize: 15,
-              color: "#4b5563",
-            }}
-          >
-            Upload university result PDFs to generate structured data and
-            download clean Excel sheets.
-          </p>
+        <h2 style={{ textAlign: "center", fontSize: "2rem", fontWeight: 700, marginBottom: 40 }}>
+          PDF Analysis
+        </h2>
 
-          {!mode && (
-            <div
+        {/* SELECT MODE */}
+        {!mode && (
+          <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
+            <button
+              onClick={() => setMode("single")}
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 20,
-                justifyContent: "center",
-                flexWrap: "wrap",
-                marginBottom: 8,
+                minWidth: 240,
+                padding: "16px 36px",
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                fontWeight: 700,
+                cursor: "pointer",
               }}
             >
-              <button
-                onClick={() => setMode("single")}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: "16px 32px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  minWidth: 260,
-                }}
-              >
-                Single PDF Analysis
-              </button>
-              <button
-                onClick={() => setMode("multiple")}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: "16px 32px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  minWidth: 260,
-                }}
-              >
-                Multiple PDF Analysis
-              </button>
-            </div>
-          )}
+              Single PDF
+            </button>
 
-          {mode === "single" && (
-            <div style={{ maxWidth: 620, margin: "0 auto" }}>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: 10,
-                  fontWeight: 600,
-                  color: "#374151",
-                  fontSize: "0.98rem",
-                }}
-              >
-                Select PDF File:
-              </label>
-              <input
-                type="file"
-                accept="application/pdf"
-                onChange={(e) =>
-                  setSinglePdf(
-                    e.target.files && e.target.files[0]
-                      ? e.target.files[0]
-                      : null
-                  )
-                }
-                style={{
-                  background: "#f9fafb",
-                  color: "#111827",
-                  border: "2px solid #d1d5db",
-                  borderRadius: 10,
-                  padding: 12,
-                  width: "100%",
-                  marginBottom: 20,
-                  fontSize: "0.95rem",
-                }}
-              />
-              <button
-                onClick={handleSinglePdfSubmit}
-                disabled={loading}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: 14,
-                  fontWeight: 600,
-                  width: "100%",
-                  cursor: loading ? "not-allowed" : "pointer",
-                  opacity: loading ? 0.6 : 1,
-                  fontSize: "1rem",
-                }}
-              >
-                {loading ? "Analyzing..." : "Submit"}
-              </button>
-              <button
-                onClick={() => {
-                  setMode(null);
-                  setResults(null);
-                  setShowJson(false);
-                }}
-                style={{
-                  background: "transparent",
-                  color: "#111827",
-                  border: "2px solid #111827",
-                  borderRadius: 14,
-                  padding: 14,
-                  marginTop: 12,
-                  width: "100%",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          )}
-
-          {mode === "multiple" && (
-            <div style={{ maxWidth: 620, margin: "0 auto" }}>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: 10,
-                  fontWeight: 600,
-                  color: "#374151",
-                  fontSize: "0.98rem",
-                }}
-              >
-                Semester 1 PDF:
-              </label>
-              <input
-                type="file"
-                accept="application/pdf"
-                onChange={(e) =>
-                  setSem1Pdf(
-                    e.target.files && e.target.files[0]
-                      ? e.target.files[0]
-                      : null
-                  )
-                }
-                style={{
-                  background: "#f9fafb",
-                  color: "#111827",
-                  border: "2px solid #d1d5db",
-                  borderRadius: 10,
-                  padding: 12,
-                  width: "100%",
-                  marginBottom: 18,
-                  fontSize: "0.95rem",
-                }}
-              />
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: 10,
-                  fontWeight: 600,
-                  color: "#374151",
-                  fontSize: "0.98rem",
-                }}
-              >
-                Semester 2 PDF:
-              </label>
-              <input
-                type="file"
-                accept="application/pdf"
-                onChange={(e) =>
-                  setSem2Pdf(
-                    e.target.files && e.target.files[0]
-                      ? e.target.files[0]
-                      : null
-                  )
-                }
-                style={{
-                  background: "#f9fafb",
-                  color: "#111827",
-                  border: "2px solid #d1d5db",
-                  borderRadius: 10,
-                  padding: 12,
-                  width: "100%",
-                  marginBottom: 20,
-                  fontSize: "0.95rem",
-                }}
-              />
-              <button
-                onClick={handleMultiplePdfSubmit}
-                disabled={loading}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: 14,
-                  fontWeight: 600,
-                  width: "100%",
-                  cursor: loading ? "not-allowed" : "pointer",
-                  opacity: loading ? 0.6 : 1,
-                  fontSize: "1rem",
-                }}
-              >
-                {loading ? "Analyzing..." : "Submit"}
-              </button>
-              <button
-                onClick={() => {
-                  setMode(null);
-                  setResults(null);
-                  setShowJson(false);
-                }}
-                style={{
-                  background: "transparent",
-                  color: "#111827",
-                  border: "2px solid #111827",
-                  borderRadius: 14,
-                  padding: 14,
-                  marginTop: 12,
-                  width: "100%",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          )}
-
-          {results && (
-            <div
+            <button
+              onClick={() => setMode("multiple")}
               style={{
-                marginTop: 28,
-                padding: 20,
+                minWidth: 240,
+                padding: "16px 36px",
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Multiple PDFs
+            </button>
+          </div>
+        )}
+
+        {/* SINGLE PDF */}
+        {mode === "single" && (
+          <div style={{ maxWidth: 600, margin: "30px auto 0" }}>
+            <label style={{ fontWeight: 600 }}>Select PDF File:</label>
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={(e) => setSinglePdf(e.target.files?.[0] || null)}
+              style={{
+                width: "100%",
+                padding: 14,
+                marginTop: 10,
+                marginBottom: 20,
+                borderRadius: 12,
                 background: "#f9fafb",
-                borderRadius: 16,
-                border: "1px solid #e5e7eb",
-                maxWidth: 640,
-                marginLeft: "auto",
-                marginRight: "auto",
+                border: "2px solid #e5e7eb",
+              }}
+            />
+
+            <button
+              disabled={loading}
+              onClick={handleSinglePdfSubmit}
+              style={{
+                width: "100%",
+                padding: 14,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontWeight: 700,
               }}
             >
-              <div style={{ display: "flex", gap: 16 }}>
-                <button
-                  onClick={() => setShowJson(!showJson)}
-                  style={{
-                    flex: 1,
-                    textAlign: "center",
-                    background: "#111827",
-                    color: "#ffffff",
-                    padding: 14,
-                    borderRadius: 14,
-                    border: "none",
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    fontSize: "1rem",
-                  }}
-                >
-                  {showJson ? "Hide JSON" : "View JSON"}
-                </button>
-                <a
-                  href={results.excelFile}
-                  download
-                  style={{
-                    flex: 1,
-                    textAlign: "center",
-                    background: "#111827",
-                    color: "#ffffff",
-                    padding: 14,
-                    borderRadius: 14,
-                    textDecoration: "none",
-                    fontWeight: 600,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "1rem",
-                  }}
-                >
-                  Download Excel
-                </a>
-              </div>
+              {loading ? "Processing..." : "Submit"}
+            </button>
 
-              {showJson && (
-                <div
-                  style={{
-                    marginTop: 16,
-                    background: "#ffffff",
-                    borderRadius: 10,
-                    padding: 16,
-                    maxHeight: 400,
-                    overflowY: "auto",
-                    border: "1px solid #e5e7eb",
-                  }}
-                >
-                  <pre
-                    style={{
-                      color: "#111827",
-                      fontSize: 12,
-                      margin: 0,
-                      whiteSpace: "pre-wrap",
-                      wordBreak: "break-word",
-                    }}
-                  >
-                    {JSON.stringify(results.data, null, 2)}
-                  </pre>
-                </div>
-              )}
+            <button
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+                setShowJson(false);
+              }}
+              style={{
+                marginTop: 12,
+                width: "100%",
+                padding: 14,
+                borderRadius: 999,
+                border: "2px solid #111827",
+                background: "transparent",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
+
+        {/* MULTIPLE PDF */}
+        {mode === "multiple" && (
+          <div style={{ maxWidth: 600, margin: "30px auto 0" }}>
+            <label style={{ fontWeight: 600 }}>Semester 1 PDF:</label>
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={(e) => setSem1Pdf(e.target.files?.[0] || null)}
+              style={{
+                width: "100%",
+                padding: 14,
+                marginTop: 10,
+                marginBottom: 20,
+                borderRadius: 12,
+                background: "#f9fafb",
+                border: "2px solid #e5e7eb",
+              }}
+            />
+
+            <label style={{ fontWeight: 600 }}>Semester 2 PDF:</label>
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={(e) => setSem2Pdf(e.target.files?.[0] || null)}
+              style={{
+                width: "100%",
+                padding: 14,
+                marginTop: 10,
+                marginBottom: 20,
+                borderRadius: 12,
+                background: "#f9fafb",
+                border: "2px solid #e5e7eb",
+              }}
+            />
+
+            <button
+              disabled={loading}
+              onClick={handleMultiplePdfSubmit}
+              style={{
+                width: "100%",
+                padding: 14,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontWeight: 700,
+              }}
+            >
+              {loading ? "Processing..." : "Submit"}
+            </button>
+
+            <button
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+                setShowJson(false);
+              }}
+              style={{
+                marginTop: 12,
+                width: "100%",
+                padding: 14,
+                borderRadius: 999,
+                border: "2px solid #111827",
+                background: "transparent",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
+
+        {/* RESULTS BOX */}
+        {results && (
+          <div
+            style={{
+              marginTop: 40,
+              background: "#f3f4f6",
+              padding: 20,
+              borderRadius: 12,
+              border: "1px solid #e5e7eb",
+              maxWidth: 700,
+              margin: "40px auto 0",
+            }}
+          >
+            <div style={{ display: "flex", gap: 16 }}>
+              <button
+                onClick={() => setShowJson(!showJson)}
+                style={{
+                  flex: 1,
+                  padding: 14,
+                  background: "#111827",
+                  color: "#fff",
+                  borderRadius: 999,
+                  border: "none",
+                  fontWeight: 700,
+                }}
+              >
+                {showJson ? "Hide JSON" : "View JSON"}
+              </button>
+
+              <a
+                href={results.excelFile}
+                download
+                style={{
+                  flex: 1,
+                  padding: 14,
+                  background: "#111827",
+                  color: "#fff",
+                  borderRadius: 999,
+                  textAlign: "center",
+                  textDecoration: "none",
+                  fontWeight: 700,
+                }}
+              >
+                Download Excel
+              </a>
             </div>
-          )}
-        </div>
+
+            {showJson && (
+              <div
+                style={{
+                  marginTop: 18,
+                  background: "#fff",
+                  padding: 16,
+                  borderRadius: 8,
+                  border: "1px solid #e5e7eb",
+                  maxHeight: 400,
+                  overflowY: "auto",
+                }}
+              >
+                <pre style={{ fontSize: 12 }}>
+                  {JSON.stringify(results.data, null, 2)}
+                </pre>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 /* ===========================
-   EXCEL ANALYSIS PAGE
+   EXCEL ANALYSIS PAGE (NEW UI)
    =========================== */
 
-const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">>; }) => {
+const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetStateAction<"home" | "pdf-analysis" | "excel-analysis">> }) => {
   const [mode, setMode] = useState<null | "kt" | "passfail" | "average">(null);
+
   const [excelFile, setExcelFile] = useState<File | null>(null);
-  const [excelFiles, setExcelFiles] = useState<{
-    [key: string]: File | undefined;
-  }>({});
+  const [excelFiles, setExcelFiles] = useState<{ [key: string]: File | undefined }>({});
+
   const [loading, setLoading] = useState(false);
 
   interface ExcelResults {
@@ -914,19 +608,20 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
     chartUrl?: string;
     chartData?: any;
   }
+
   const [results, setResults] = useState<ExcelResults | null>(null);
 
+  /* ========== HANDLERS ========== */
+
   const handleKTStudents = async () => {
-    if (!excelFile) {
-      alert("Please select an Excel file.");
-      return;
-    }
+    if (!excelFile) return alert("Please select an Excel file.");
 
     const formData = new FormData();
     formData.append("file", excelFile);
 
     try {
       setLoading(true);
+
       const res = await fetch(`${BASE_URL}/analysis/get-kt-students/`, {
         method: "POST",
         body: formData,
@@ -936,28 +631,22 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
 
       const data = await res.json();
       setResults({ excelFile: `${BASE_URL}${data.excel_file}` });
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
+    } catch (e: any) {
+      alert(e.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handlePassFailAnalysis = async () => {
-    if (!excelFile) {
-      alert("Please select an Excel file.");
-      return;
-    }
+    if (!excelFile) return alert("Please select an Excel file.");
 
     const formData = new FormData();
     formData.append("file", excelFile);
 
     try {
       setLoading(true);
+
       const res = await fetch(`${BASE_URL}/analysis/pass-fail-analysis/`, {
         method: "POST",
         body: formData,
@@ -972,36 +661,27 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
         chartUrl: `${BASE_URL}${data.chart_url}`,
         chartData: data.chart_data,
       });
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
+    } catch (e: any) {
+      alert(e.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handleAveragePercentages = async () => {
-    const fileCount = Object.keys(excelFiles).filter(
-      (key) => excelFiles[key]
-    ).length;
+    const fileCount = Object.values(excelFiles).filter(Boolean).length;
 
-    if (fileCount === 0) {
-      alert("Please select at least one Excel file.");
-      return;
-    }
+    if (fileCount === 0) return alert("Select at least one file");
 
     const formData = new FormData();
     for (let i = 1; i <= 8; i++) {
-      if (excelFiles[`file${i}`]) {
-        formData.append(`file${i}`, excelFiles[`file${i}`] as File);
-      }
+      const key = `file${i}`;
+      if (excelFiles[key]) formData.append(key, excelFiles[key] as File);
     }
 
     try {
       setLoading(true);
+
       const res = await fetch(`${BASE_URL}/analysis/average-semesters/`, {
         method: "POST",
         body: formData,
@@ -1010,477 +690,363 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
       if (!res.ok) throw new Error("Failed to upload files");
 
       const data = await res.json();
-
       setResults({ excelFile: `${BASE_URL}${data.excel_file}` });
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
+    } catch (e: any) {
+      alert(e.message);
     } finally {
       setLoading(false);
     }
   };
 
+  /* ========== UI ========== */
+
   return (
     <div
       style={{
-        background: "#f1f2f4",
+        background: "#ffffff",
         minHeight: "100vh",
-        width: "100%",
-        padding: "32px 16px",
-        fontFamily: "'Open Sans', 'Segoe UI', Arial, sans-serif",
+        padding: "40px 60px",
+        fontFamily: "'Inter','Open Sans',sans-serif",
         color: "#111827",
-        display: "flex",
-        justifyContent: "center",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 980,
-          position: "relative",
-        }}
-      >
-        <div
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <button
+          onClick={() => setPage("home")}
           style={{
-            background: "#ffffff",
-            borderRadius: 24,
-            boxShadow: "0 18px 48px rgba(15,23,42,0.12)",
-            padding: "32px 28px 32px",
+            background: "transparent",
+            color: "#111827",
+            border: "2px solid #111827",
+            borderRadius: 999,
+            padding: "10px 20px",
+            fontWeight: 600,
+            cursor: "pointer",
+            marginBottom: 32,
           }}
         >
-          <button
-            onClick={() => setPage("home")}
-            style={{
-              background: "transparent",
-              color: "#111827",
-              border: "2px solid #111827",
-              borderRadius: 999,
-              padding: "8px 18px",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              marginBottom: 24,
-            }}
-          >
-            ← Back to Home
-          </button>
+          ← Back
+        </button>
 
-          <h2
-            style={{
-              textAlign: "center",
-              marginBottom: 16,
-              color: "#111827",
-              fontWeight: 700,
-              fontSize: "2rem",
-            }}
-          >
-            Excel Analysis
-          </h2>
-          <p
-            style={{
-              textAlign: "center",
-              marginBottom: 32,
-              fontSize: 15,
-              color: "#4b5563",
-            }}
-          >
-            Use existing Excel result files to get KT students, pass/fail
-            statistics, or average semester percentages.
-          </p>
+        <h2 style={{ textAlign: "center", fontSize: "2rem", fontWeight: 700, marginBottom: 40 }}>
+          Excel Analysis
+        </h2>
 
-          {!mode && (
-            <div
+        {!mode && (
+          <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
+            <button
+              onClick={() => setMode("kt")}
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 20,
-                justifyContent: "center",
-                flexWrap: "wrap",
-                marginBottom: 8,
+                minWidth: 240,
+                padding: "16px 36px",
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                fontWeight: 700,
+                cursor: "pointer",
               }}
             >
-              <button
-                onClick={() => setMode("kt")}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: "16px 32px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  minWidth: 230,
-                }}
-              >
-                Get KT Students
-              </button>
-              <button
-                onClick={() => setMode("passfail")}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: "16px 32px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  minWidth: 230,
-                }}
-              >
-                Pass/Fail Analysis
-              </button>
-              <button
-                onClick={() => setMode("average")}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: "16px 32px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  minWidth: 230,
-                }}
-              >
-                Average Percentages
-              </button>
-            </div>
-          )}
+              Get KT Students
+            </button>
 
-          {mode === "kt" && (
-            <div style={{ maxWidth: 620, margin: "0 auto" }}>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: 10,
-                  fontWeight: 600,
-                  color: "#374151",
-                  fontSize: "0.98rem",
-                }}
-              >
-                Select Excel File:
-              </label>
-              <input
-                type="file"
-                accept=".xlsx,.xls"
-                onChange={(e) =>
-                  setExcelFile(
-                    e.target.files && e.target.files[0]
-                      ? e.target.files[0]
-                      : null
-                  )
-                }
-                style={{
-                  background: "#f9fafb",
-                  color: "#111827",
-                  border: "2px solid #d1d5db",
-                  borderRadius: 10,
-                  padding: 12,
-                  width: "100%",
-                  marginBottom: 20,
-                  fontSize: "0.95rem",
-                }}
-              />
-              <button
-                onClick={handleKTStudents}
-                disabled={loading}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: 14,
-                  fontWeight: 600,
-                  width: "100%",
-                  cursor: loading ? "not-allowed" : "pointer",
-                  opacity: loading ? 0.6 : 1,
-                  fontSize: "1rem",
-                }}
-              >
-                {loading ? "Processing..." : "Submit"}
-              </button>
-              <button
-                onClick={() => {
-                  setMode(null);
-                  setResults(null);
-                }}
-                style={{
-                  background: "transparent",
-                  color: "#111827",
-                  border: "2px solid #111827",
-                  borderRadius: 14,
-                  padding: 14,
-                  marginTop: 12,
-                  width: "100%",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          )}
+            <button
+              onClick={() => setMode("passfail")}
+              style={{
+                minWidth: 240,
+                padding: "16px 36px",
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Pass/Fail Analysis
+            </button>
 
-          {mode === "passfail" && (
-            <div style={{ maxWidth: 620, margin: "0 auto" }}>
-              <label
-                style={{
-                  display: "block",
-                  marginBottom: 10,
-                  fontWeight: 600,
-                  color: "#374151",
-                  fontSize: "0.98rem",
-                }}
-              >
-                Select Excel File:
-              </label>
-              <input
-                type="file"
-                accept=".xlsx,.xls"
-                onChange={(e) =>
-                  setExcelFile(
-                    e.target.files && e.target.files[0]
-                      ? e.target.files[0]
-                      : null
-                  )
-                }
-                style={{
-                  background: "#f9fafb",
-                  color: "#111827",
-                  border: "2px solid #d1d5db",
-                  borderRadius: 10,
-                  padding: 12,
-                  width: "100%",
-                  marginBottom: 20,
-                  fontSize: "0.95rem",
-                }}
-              />
-              <button
-                onClick={handlePassFailAnalysis}
-                disabled={loading}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: 14,
-                  fontWeight: 600,
-                  width: "100%",
-                  cursor: loading ? "not-allowed" : "pointer",
-                  opacity: loading ? 0.6 : 1,
-                  fontSize: "1rem",
-                }}
-              >
-                {loading ? "Processing..." : "Submit"}
-              </button>
-              <button
-                onClick={() => {
-                  setMode(null);
-                  setResults(null);
-                }}
-                style={{
-                  background: "transparent",
-                  color: "#111827",
-                  border: "2px solid #111827",
-                  borderRadius: 14,
-                  padding: 14,
-                  marginTop: 12,
-                  width: "100%",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          )}
+            <button
+              onClick={() => setMode("average")}
+              style={{
+                minWidth: 240,
+                padding: "16px 36px",
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Average % (1–8 Sem)
+            </button>
+          </div>
+        )}
 
-          {mode === "average" && (
-            <div style={{ maxWidth: 720, margin: "0 auto" }}>
-              <p
-                style={{
-                  marginBottom: 20,
-                  fontSize: "0.98rem",
-                  color: "#4b5563",
-                  textAlign: "center",
-                }}
-              >
-                Upload 1–8 semester files (at least one required):
-              </p>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 16,
-                }}
-              >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                  <div key={num}>
-                    <label
-                      style={{
-                        display: "block",
-                        marginBottom: 6,
-                        fontSize: "0.95rem",
-                        fontWeight: 600,
-                        color: "#374151",
-                      }}
-                    >
-                      Semester {num}:
-                    </label>
-                    <input
-                      type="file"
-                      accept=".xlsx,.xls"
-                      onChange={(e) =>
-                        setExcelFiles({
-                          ...excelFiles,
-                          [`file${num}`]:
-                            e.target.files && e.target.files[0]
-                              ? e.target.files[0]
-                              : undefined,
-                        })
-                      }
-                      style={{
-                        background: "#f9fafb",
-                        color: "#111827",
-                        border: "2px solid #d1d5db",
-                        borderRadius: 10,
-                        padding: 10,
-                        width: "100%",
-                        fontSize: "0.9rem",
-                      }}
-                    />
-                  </div>
-                ))}
+        {/* ========== KT STUDENTS UI ========== */}
+        {mode === "kt" && (
+          <div style={{ maxWidth: 600, margin: "0 auto" }}>
+            <label style={{ fontWeight: 600 }}>Select Excel File:</label>
+            <input
+              type="file"
+              accept=".xlsx,.xls"
+              onChange={(e) => setExcelFile(e.target.files?.[0] || null)}
+              style={{
+                width: "100%",
+                padding: 14,
+                marginTop: 10,
+                marginBottom: 20,
+                borderRadius: 12,
+                background: "#f9fafb",
+                border: "2px solid #e5e7eb",
+              }}
+            />
+
+            <button
+              disabled={loading}
+              onClick={handleKTStudents}
+              style={{
+                width: "100%",
+                padding: 14,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontWeight: 700,
+              }}
+            >
+              {loading ? "Processing..." : "Submit"}
+            </button>
+
+            <button
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+              }}
+              style={{
+                marginTop: 16,
+                width: "100%",
+                padding: 14,
+                borderRadius: 999,
+                border: "2px solid #111827",
+                background: "transparent",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
+
+        {/* ========== PASS/FAIL UI ========== */}
+        {mode === "passfail" && (
+          <div style={{ maxWidth: 600, margin: "0 auto" }}>
+            <label style={{ fontWeight: 600 }}>Select Excel File:</label>
+            <input
+              type="file"
+              accept=".xlsx,.xls"
+              onChange={(e) => setExcelFile(e.target.files?.[0] || null)}
+              style={{
+                width: "100%",
+                padding: 14,
+                marginTop: 10,
+                marginBottom: 20,
+                borderRadius: 12,
+                background: "#f9fafb",
+                border: "2px solid #e5e7eb",
+              }}
+            />
+
+            <button
+              disabled={loading}
+              onClick={handlePassFailAnalysis}
+              style={{
+                width: "100%",
+                padding: 14,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontWeight: 700,
+              }}
+            >
+              {loading ? "Processing..." : "Submit"}
+            </button>
+
+            <button
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+              }}
+              style={{
+                marginTop: 16,
+                width: "100%",
+                padding: 14,
+                borderRadius: 999,
+                border: "2px solid #111827",
+                background: "transparent",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
+
+        {/* ========== AVERAGE % (MULTIPLE FILES) UI ========== */}
+        {mode === "average" && (
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+            <p style={{ textAlign: "center", marginBottom: 20, color: "#6b7280" }}>
+              Upload 1–8 semester files (at least one required)
+            </p>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 18,
+              }}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                <div key={n}>
+                  <label style={{ fontWeight: 600 }}>Semester {n}</label>
+                  <input
+                    type="file"
+                    accept=".xlsx,.xls"
+                    onChange={(e) =>
+                      setExcelFiles({
+                        ...excelFiles,
+                        [`file${n}`]: e.target.files?.[0],
+                      })
+                    }
+                    style={{
+                      width: "100%",
+                      padding: 12,
+                      marginTop: 6,
+                      borderRadius: 10,
+                      background: "#f9fafb",
+                      border: "2px solid #e5e7eb",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <button
+              disabled={loading}
+              onClick={handleAveragePercentages}
+              style={{
+                marginTop: 26,
+                width: "100%",
+                padding: 14,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 999,
+                border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
+                opacity: loading ? 0.6 : 1,
+                fontWeight: 700,
+              }}
+            >
+              {loading ? "Processing..." : "Submit"}
+            </button>
+
+            <button
+              onClick={() => {
+                setMode(null);
+                setResults(null);
+              }}
+              style={{
+                marginTop: 16,
+                width: "100%",
+                padding: 14,
+                borderRadius: 999,
+                border: "2px solid #111827",
+                background: "transparent",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
+
+        {/* ========== RESULTS BOX ========== */}
+        {results && (
+          <div
+            style={{
+              marginTop: 40,
+              padding: 20,
+              background: "#f3f4f6",
+              borderRadius: 12,
+              border: "1px solid #e5e7eb",
+              maxWidth: 800,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            {/* FILE DOWNLOAD */}
+            {results.excelFile && (
+              <div style={{ textAlign: "center" }}>
+                <a
+                  href={results.excelFile}
+                  download
+                  style={{
+                    padding: "14px 28px",
+                    background: "#111827",
+                    color: "#fff",
+                    borderRadius: 999,
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  Download Excel Results
+                </a>
               </div>
-              <button
-                onClick={handleAveragePercentages}
-                disabled={loading}
-                style={{
-                  background: "#111827",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 14,
-                  padding: 14,
-                  fontWeight: 600,
-                  width: "100%",
-                  marginTop: 24,
-                  cursor: loading ? "not-allowed" : "pointer",
-                  opacity: loading ? 0.6 : 1,
-                  fontSize: "1rem",
-                }}
-              >
-                {loading ? "Processing..." : "Submit"}
-              </button>
-              <button
-                onClick={() => {
-                  setMode(null);
-                  setResults(null);
-                }}
-                style={{
-                  background: "transparent",
-                  color: "#111827",
-                  border: "2px solid #111827",
-                  borderRadius: 14,
-                  padding: 14,
-                  marginTop: 12,
-                  width: "100%",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          )}
+            )}
 
-          {results && results.excelFile && (
-            <div
-              style={{
-                marginTop: 28,
-                textAlign: "center",
-                paddingBottom: 8,
-              }}
-            >
-              <a
-                href={results.excelFile}
-                download
-                style={{
-                  display: "inline-block",
-                  background: "#111827",
-                  color: "#ffffff",
-                  padding: "14px 32px",
-                  borderRadius: 14,
-                  textDecoration: "none",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Download Excel Results
-              </a>
-            </div>
-          )}
+            {/* PASS/FAIL RESULTS */}
+            {results.chartUrl && (
+              <div style={{ marginTop: 20 }}>
+                <h3 style={{ fontWeight: 700, marginBottom: 12 }}>Pass/Fail Chart</h3>
 
-          {results && results.chartUrl && results.chartData && (
-            <div
-              style={{
-                marginTop: 28,
-                maxWidth: 880,
-                marginLeft: "auto",
-                marginRight: "auto",
-                marginBottom: 8,
-              }}
-            >
-              <h3
-                style={{
-                  marginBottom: 16,
-                  color: "#111827",
-                  fontWeight: 600,
-                  fontSize: "1.25rem",
-                }}
-              >
-                Pass/Fail Chart
-              </h3>
-              <img
-                src={results.chartUrl}
-                alt="Pass/Fail Chart"
-                style={{
-                  width: "100%",
-                  borderRadius: 14,
-                  marginBottom: 20,
-                  border: "1px solid #e5e7eb",
-                }}
-              />
-              <div
-                style={{
-                  background: "#f9fafb",
-                  padding: 20,
-                  borderRadius: 14,
-                  fontSize: "0.95rem",
-                  border: "1px solid #e5e7eb",
-                }}
-              >
-                {results.chartData.courses.map(
-                  (course: string, idx: number) => (
-                    <div key={idx} style={{ marginBottom: 10, color: "#4b5563" }}>
-                      <strong style={{ color: "#111827" }}>{course}:</strong>{" "}
-                      Pass: {results.chartData.pass_counts[idx]}, Fail:{" "}
-                      {results.chartData.fail_counts[idx]}
+                <img
+                  src={results.chartUrl}
+                  alt="Pass/Fail Chart"
+                  style={{
+                    width: "100%",
+                    borderRadius: 8,
+                    border: "1px solid #e5e7eb",
+                    marginBottom: 16,
+                  }}
+                />
+
+                <div
+                  style={{
+                    background: "#fff",
+                    padding: 16,
+                    borderRadius: 10,
+                    border: "1px solid #e5e7eb",
+                  }}
+                >
+                  {results.chartData?.courses?.map((course: string, i: number) => (
+                    <div key={i} style={{ marginBottom: 10 }}>
+                      <strong>{course}:</strong> Pass: {results.chartData.pass_counts[i]}, Fail:{" "}
+                      {results.chartData.fail_counts[i]}
                     </div>
-                  )
-                )}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -1491,9 +1057,9 @@ const ExcelAnalysisPage = ({ setPage }: { setPage: React.Dispatch<React.SetState
    =========================== */
 
 const App = () => {
-  const [page, setPage] = useState<"home" | "pdf-analysis" | "excel-analysis">(
-    "home"
-  );
+  const [page, setPage] = useState<
+    "home" | "pdf-analysis" | "excel-analysis"
+  >("home");
 
   return (
     <>
@@ -1505,4 +1071,3 @@ const App = () => {
 };
 
 export default App;
-
